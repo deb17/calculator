@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="brython()">
+    <div id="calc">
+      <input type="text" value="0" title="" maxlength="80" disabled />
+      <div id="main-buttons" class="button-pad">
+        <div class="row" id="row1">
+          <button class="dark">+/-</button>
+          <button class="arrow">func</button>
+        </div>
+        <div class="row">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button class="dark">&lArr;</button>
+          <button class="dark">C</button>
+        </div>
+        <div class="row">
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button class="dark">+</button>
+          <button class="dark">-</button>
+        </div>
+        <div class="row">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button class="dark">*</button>
+          <button class="dark">/</button>
+        </div>
+        <div class="row">
+          <button class="dark">(</button>
+          <button>0</button>
+          <button class="dark">)</button>
+          <button class="dark">.</button>
+          <button id="eq">=</button>
+        </div>
+      </div>
+      <div id="math-buttons" class="button-pad">
+        <div class="row">
+          <div>
+            <label>
+              <input type="radio" name="angle" value="rad" checked />
+              Rad
+            </label>
+            <label>
+              <input type="radio" name="angle" value="deg" />
+              Deg
+            </label>
+          </div>
+          <div id="math-controls">
+            <button class="dark">,</button>
+            <button class="arrow">Back</button>
+          </div>
+        </div>
+        <div class="row">
+          <button>x<sup>2</sup></button>
+          <button>&radic;</button>
+          <button>x<sup>y</sup></button>
+          <button>1/x</button>
+          <button>exp</button>
+        </div>
+        <div class="row">
+          <button>ln</button>
+          <button>log2</button>
+          <button>log10</button>
+          <button>&pi;</button>
+          <button>e</button>
+        </div>
+        <div class="row">
+          <button>sin</button>
+          <button>cos</button>
+          <button>tan</button>
+          <button>!</button>
+          <button>mod</button>
+        </div>
+        <div class="row">
+          <button>asin</button>
+          <button>acos</button>
+          <button>atan</button>
+          <button>gcd</button>
+          <button>div</button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.min.js"
+      integrity="sha256-o/getzwHeAq4xcWJ350CFg+70KNoYxxdK8ikIp76hIM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython_stdlib.js"
+      integrity="sha256-Gnrw9tIjrsXcZSCh/wos5Jrpn0bNVNFJuNJI9d71TDs="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/python" src="calc.py"></script>
+  </body>
+</html>
