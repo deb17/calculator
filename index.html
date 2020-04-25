@@ -8,11 +8,11 @@
   </head>
   <body onload="brython()">
     <div id="calc">
-      <input type="text" value="0" title="" maxlength="80" disabled />
+      <input type="text" value="0" title="" disabled />
       <div id="main-buttons" class="button-pad">
         <div class="row" id="row1">
           <button class="dark">+/-</button>
-          <button class="arrow">func</button>
+          <button class="flip" id="func">func</button>
         </div>
         <div class="row">
           <button>7</button>
@@ -57,7 +57,7 @@
           </div>
           <div id="math-controls">
             <button class="dark">,</button>
-            <button class="arrow">Back</button>
+            <button class="flip">Back</button>
           </div>
         </div>
         <div class="row">

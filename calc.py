@@ -120,7 +120,13 @@ def action(e):
     else:
         value += label
 
-    inp.title = inp.value = value
+    inp.title = inp.value = value[:80]
+
+    if label not in ('func', 'Back'):
+        if label != '=':
+            inp.scrollLeft = inp.scrollWidth
+        else:
+            inp.scrollLeft = 0
 
 
 def format_result(res):
@@ -170,6 +176,7 @@ def convert(e):
             else:
                 deg = round(math.degrees(angle), 10)
                 inp.title = inp.value = str(deg)
+            inp.scrollLeft = 0
 
 
 for button in document.select('button'):

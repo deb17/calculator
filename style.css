@@ -14,7 +14,7 @@ body {
   padding: 40px;
   border: 6px solid gray;
   border-radius: 10px;
-  background-color: #85144b;
+  background-color: #990099;
 }
 @media (max-width: 576px) {
   #calc {
@@ -30,6 +30,9 @@ input[type="text"] {
   font-size: 35px;
   text-align: right;
   padding-left: 10px;
+  padding-right: 3px;
+  border: none;
+  background-color: white;
 }
 .button-pad {
   display: flex;
@@ -49,12 +52,20 @@ button {
   border: none;
   border-radius: 3px;
 }
-.arrow {
-  background-color: #666;
+button:active {
+  background-color: #ccc;
+}
+.flip {
+  background-color: darkblue;
   color: wheat;
   font-size: 14px;
   width: 44px;
   height: 44px;
+}
+.flip:active,
+#eq:active {
+  background-color: #b3b3b3;
+  color: #111;
 }
 #math-buttons {
   display: none;
