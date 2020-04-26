@@ -1,3 +1,7 @@
+'''This module performs the math operations of the calculator using
+brython.
+'''
+
 from browser import document
 import math
 from functools import wraps
@@ -11,6 +15,10 @@ sign = False
 
 
 def deco(func):
+    '''A decorator to allow angles in degrees in trigonometric
+    functions.
+    '''
+
     @wraps(func)
     def wrapper(x):
         lst = document.select('input[name="angle"]')
@@ -46,6 +54,14 @@ LOCALS = {'fact': math.factorial,
 
 
 def action(e):
+    '''Specifies action to take when any button is pressed.
+
+    It uses 2 variables - `label` and `value` to carry out the action.
+    `label` is the label of the button and `value` is the output that
+    will appear on the display. It uses `eval` to calculate the value
+    of the expression - this is safe in this case because input is
+    limited to the buttons on the keypad.
+    '''
 
     inp = document.select('#calc>input')[0]
     display = value = inp.value
@@ -130,6 +146,10 @@ def action(e):
 
 
 def format_result(res):
+    '''Format the result as an integer or floating-point number. Use
+    exponent notation if it is too large. Note that very small numbers
+    seem to be taken care of by `eval`.
+    '''
 
     num = int(res)
     if num == res:
@@ -148,6 +168,7 @@ def format_result(res):
 
 
 def change_pad(to):
+    '''Show the main buttons or the math function buttons.'''
 
     main_pad = document['main-buttons']
     math_pad = document['math-buttons']
@@ -161,6 +182,7 @@ def change_pad(to):
 
 
 def convert(e):
+    '''Convert radians to degrees or vice versa.'''
 
     inp = document.select('#calc>input')[0]
 
