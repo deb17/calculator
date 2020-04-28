@@ -4,7 +4,6 @@ brython.
 
 from browser import document
 import math
-from functools import wraps
 
 FUNCS = {'exp', 'log2', 'log10',
          'sin', 'cos', 'tan',
@@ -19,7 +18,6 @@ def deco(func):
     functions.
     '''
 
-    @wraps(func)
     def wrapper(x):
         lst = document.select('input[name="angle"]')
 
